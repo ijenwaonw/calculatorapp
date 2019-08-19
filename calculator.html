@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>calculator</title>
+</head>
+<body>
+    <form>
+      Value 1: <input type="text" id="value1">
+      Value 2: <input type="text" id="value2">
+     Operator:
+     <select id= "operator">
+            <option value= "add">Add</option>
+            <option value= "min">Minus</option>
+            <option value= "div">Divide</option>
+            <option value= "mul">Multiply</option>
+     </select>
+     <button type= "button" onclick= "calc()"> Calculate</button>   
+    </form>
+
+      <div id= "result"></div>
+
+    <script>
+
+        function calc() {
+            var a = parseInt(document.querySelector("#value1").value);
+            var b = parseInt(document.querySelector("#value2").value);
+            var op  = document.querySelector("#operator").value;
+            var calculate;
+ 
+            if (op == "add") {
+             calculate = a + b;
+          } else if (op =="min") {
+             calculate = a - b;
+         } else if (op == "div") {
+             calculate = a / b;
+         } else if (op == "mul") {
+            calculate = a * b;
+       }
+        console.log(calculate);
+        document.querySelector("#result").innerHTML= calculate;
+       }
+                    
+    </script>
+    
+</body>
+</html>
